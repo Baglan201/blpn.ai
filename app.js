@@ -1349,7 +1349,9 @@ els.supportForm.addEventListener("submit", (event) => {
 
 els.featuredVideo?.addEventListener("ended", () => openTaskModal(appState.activeVideoId));
 
-const image = document.querySelector(".story-book-cover__image");
+if (storyImage) {
+  storyImage.style.setProperty("--parallax-y", currentY + "px");
+}
 
 let lastY = 0;
 let currentY = 0;
