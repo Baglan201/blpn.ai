@@ -584,11 +584,11 @@ const els = {
 };
 
 const storybookImages = [
-  { src: "img-site /1.jpg", alt: "Image 1" },
-  { src: "img-site /2.jpg", alt: "Image 2" },
-  { src: "img-site /3.jpg", alt: "Image 3" },
-  { src: "img-site /4.jpg", alt: "Image 4" },
-  { src: "img-site /5.jpg", alt: "Image 5" },
+  { src: `${BASE}img-site/1.jpg`, alt: "Image 1" },
+  { src: `${BASE}img-site/2.jpg`, alt: "Image 2" },
+  { src: `${BASE}img-site/3.jpg`, alt: "Image 3" },
+  { src: `${BASE}img-site/4.jpg`, alt: "Image 4" },
+  { src: `${BASE}img-site/5.jpg`, alt: "Image 5" },
 ];
 
 let currentStoryIndex = 0;
@@ -1349,6 +1349,7 @@ els.supportForm.addEventListener("submit", (event) => {
 
 els.featuredVideo?.addEventListener("ended", () => openTaskModal(appState.activeVideoId));
 
+const storyImage = document.querySelector(".story-book-cover__image");
 if (storyImage) {
   storyImage.style.setProperty("--parallax-y", currentY + "px");
 }
