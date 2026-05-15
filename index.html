@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>balapan.ai book school</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Fraunces:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="book-bg"></div>
+    <div class="app-shell">
+      <header class="topbar">
+        <a href="#home" class="brand">
+          <img src="logo.jpeg" alt="balapan.ai logo" class="brand__logo" />
+          <div class="brand__text">
+            <strong>balapan.ai</strong>
+            <span data-i18n="brandTag">Ағылшын ертегі әлемі</span>
+          </div>
+        </a>
+
+        <div class="topbar__actions">
+          <div class="language-switcher" aria-label="Language switcher">
+            <button class="language-switcher__button is-active" type="button" data-lang="kk">
+              KZ
+            </button>
+            <button class="language-switcher__button" type="button" data-lang="ru">
+              RU
+            </button>
+            <button class="language-switcher__button" type="button" data-lang="en">
+              EN
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="menu-button"
+            id="menu-toggle"
+            aria-expanded="false"
+            aria-controls="menu-drawer"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <aside class="menu-drawer hidden" id="menu-drawer">
+        <nav class="menu-list">
+          <a href="#home" data-section-link="home" data-i18n="navHome">Басты бет</a>
+          <a href="#videos" data-section-link="videos" data-i18n="navVideos">Видео</a>
+          <a href="#genres" data-section-link="genres" data-i18n="navGenres">Жанрлар</a>
+          <a href="#games" data-section-link="games" data-i18n="navGames">Тапсырмалар / Ойындар</a>
+          <a href="#words" data-section-link="words" data-i18n="navWords">Сөздер</a>
+          <a href="#feedback" data-section-link="feedback" data-i18n="navFeedback">Кері байланыс</a>
+          <a href="#support" data-section-link="support" data-i18n="navSupport">Қолдау</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section class="book-spread hero-book" id="home">
+          <div class="page page--story">
+            <div class="story-book-block">
+              <button class="story-book-cover" type="button" id="open-storybook">
+                <img src="img-site /2.jpg" alt="Story book cover" class="story-book-cover__image" />
+                <div class="story-book-cover__overlay">
+                  <h1 class="story-book-title">balapan.ai stories</h1>
+                  <p class="lead story-book-text">
+                    Click the cover to open the photo book and flip through the pictures.
+                  </p>
+                </div>
+              </button>
+              <div class="story-book-quote">
+                <p class="story-book-quote__text" data-i18n="storyQuote">
+                  Ертегімен өс, біліммен өрле.
+                </p>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <button class="primary-button" type="button" id="open-auth" data-i18n="startNow">
+                Қазір бастау
+              </button>
+              <button class="secondary-button" type="button" id="open-placement" data-i18n="takeTest">
+                Деңгейді анықтау
+              </button>
+            </div>
+
+            <div class="shortcut-grid">
+              <button class="shortcut-card" type="button" data-jump="videos">
+                <span>01</span>
+                <strong data-i18n="shortcutVideos">Видео сабақтар</strong>
+              </button>
+              <button class="shortcut-card" type="button" data-jump="genres">
+                <span>02</span>
+                <strong data-i18n="shortcutGenres">Жанр таңдау</strong>
+              </button>
+              <button class="shortcut-card" type="button" data-jump="games">
+                <span>03</span>
+                <strong data-i18n="shortcutGames">Ойын тапсырмалар</strong>
+              </button>
+              <button class="shortcut-card" type="button" data-jump="words">
+                <span>04</span>
+                <strong data-i18n="shortcutWords">Сөздік әлемі</strong>
+              </button>
+            </div>
+
+            <div class="book-ribbon book-ribbon--below-shortcuts">
+              <span data-i18n="featuredLesson">Бүгінгі сабақ</span>
+              <strong id="featured-level">A1</strong>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="book-spread status-strip">
+          <div class="status-card">
+            <span data-i18n="profileLabel">Профиль</span>
+            <strong id="profile-name">Aruzhan</strong>
+            <p id="profile-summary"></p>
+          </div>
+          <div class="status-card character-card" id="character-card">
+            <span data-i18n="characterLabel">Серіктес кейіпкер</span>
+            <div class="character-avatar" id="character-avatar">🐉</div>
+            <strong id="character-name"></strong>
+            <p id="character-mood"></p>
+          </div>
+          <div class="status-card">
+            <span data-i18n="progressLabel">Прогресс</span>
+            <strong id="progress-stars">128 ★</strong>
+            <p id="progress-lessons"></p>
+          </div>
+        </section>
+
+        <section class="section-block" id="videos">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="videoSectionEyebrow">Қысқа сабақтар</p>
+            <h2 data-i18n="videoSectionTitle">Видео арқылы үйрену</h2>
+            <p data-i18n="videoSectionText">
+              1–3 минуттық видеолар баланың жасына, деңгейіне және жанр таңдауына сай көрсетіледі.
+            </p>
+          </div>
+          <div class="placement-video-card placement-video-card--section">
+            <video controls playsinline preload="metadata" class="placement-video" id="section-video-player">
+              <source src="placement-video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="lesson-grid" id="video-grid"></div>
+        </section>
+
+        <section class="section-block" id="genres">
+          <div class="section-heading">
+            <h2 data-i18n="genreTitle">Жанр бойынша таңдау</h2>
+            <p data-i18n="genreText">
+              Әр жанрдың өз түсі, көңіл-күйі және сөздік бағыты бар.
+            </p>
+          </div>
+          <div class="genre-filter" id="genre-filter"></div>
+          <div class="genre-video-list" id="genre-video-list"></div>
+        </section>
+
+        <section class="section-block" id="games">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="gamesEyebrow">Тапсырмалар</p>
+            <h2 data-i18n="gamesTitle">Видео соңындағы ойындар</h2>
+            <p data-i18n="gamesText">
+              Дұрыс жауап таңда, сөздерді толықтыр, жұптарды сәйкестендір және бірден кері байланыс ал.
+            </p>
+          </div>
+
+          <div class="game-preview">
+            <div class="mini-card">
+              <span data-i18n="gameTypeChoice">Таңдау сұрағы</span>
+              <strong data-i18n="gameChoicePrompt">Who helps the dragon in the story?</strong>
+              <p data-i18n="gameChoiceAnswers">Robot / Fairy / Teacher</p>
+            </div>
+            <div class="mini-card">
+              <span data-i18n="gameTypeFill">Бос орынды толтыру</span>
+              <strong data-i18n="gameFillPrompt">The hero says: “I can ___ the stars.”</strong>
+              <p data-i18n="gameFillAnswers">see</p>
+            </div>
+            <div class="mini-card">
+              <span data-i18n="gameTypeMatch">Сәйкестендіру</span>
+              <strong data-i18n="gameMatchPrompt">moon → ай, brave → батыл</strong>
+              <p data-i18n="gameMatchAnswers">2 жұп</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block" id="words">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="wordsEyebrow">Сөздік</p>
+            <h2 data-i18n="wordsTitle">Сөздерді тыңдап, есте сақта</h2>
+            <p data-i18n="wordsText">
+              Әр сөзде аударма, дыбыстау және шағын жаттығу бар.
+            </p>
+          </div>
+          <div class="word-grid" id="word-grid"></div>
+        </section>
+
+        <section class="section-block progress-layout">
+          <div class="progress-panel">
+            <div class="section-heading section-heading--compact">
+              <p class="eyebrow" data-i18n="levelsEyebrow">Деңгейлер</p>
+              <h2 data-i18n="levelsTitle">A1-ден B2-ге дейін</h2>
+            </div>
+            <div class="level-selector" id="level-selector"></div>
+            <div class="placement-card">
+              <strong data-i18n="placementTitle">Қысқа тест арқылы деңгейді анықтау</strong>
+              <p data-i18n="placementText">
+                4 сұрақтық тест баланың тіл деңгейін шамамен анықтап, лайықты контент ұсынады.
+              </p>
+              <button class="secondary-button" type="button" id="start-placement-inline" data-i18n="placementButton">
+                Тесті бастау
+              </button>
+            </div>
+          </div>
+
+          <div class="progress-panel">
+            <div class="section-heading section-heading--compact">
+              <p class="eyebrow" data-i18n="achievementsEyebrow">Жетістіктер</p>
+              <h2 data-i18n="achievementsTitle">Жұлдыздар мен белгілер</h2>
+            </div>
+            <div class="achievement-grid" id="achievement-grid"></div>
+          </div>
+        </section>
+
+        <section class="section-block twin-sections">
+          <div class="panel-card" id="feedback">
+            <div class="section-heading section-heading--compact">
+              <p class="eyebrow" data-i18n="feedbackEyebrow">Кері байланыс</p>
+              <h2 data-i18n="feedbackTitle">Ата-ана мен мұғалімге</h2>
+            </div>
+            <p data-i18n="feedbackText">
+              Пікір қалдыру, сабақ сапасын бағалау және жаңа жанр ұсыну формасы осында орналасады.
+            </p>
+            <div class="idea-tags" id="feedback-ideas"></div>
+            <form class="message-form" id="feedback-form">
+              <label>
+                <span data-i18n="feedbackNameLabel">Аты-жөні</span>
+                <input type="text" name="author" required />
+              </label>
+              <label>
+                <span data-i18n="feedbackRoleLabel">Сіз кімсіз?</span>
+                <select name="role">
+                  <option value="parent" data-i18n="feedbackRoleParent">Ата-ана</option>
+                  <option value="teacher" data-i18n="feedbackRoleTeacher">Мұғалім</option>
+                  <option value="mentor" data-i18n="feedbackRoleMentor">Тәлімгер</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="feedbackMessageLabel">Хабарлама</span>
+                <textarea name="message" rows="5" required></textarea>
+              </label>
+              <button class="primary-button" type="submit" data-i18n="feedbackSubmit">Жіберу</button>
+            </form>
+            <div class="results-box hidden" id="feedback-result"></div>
+          </div>
+          <div class="panel-card" id="support">
+            <div class="section-heading section-heading--compact">
+              <p class="eyebrow" data-i18n="supportEyebrow">Қолдау</p>
+              <h2 data-i18n="supportTitle">Көмек және қауіпсіздік</h2>
+            </div>
+            <p data-i18n="supportText">
+              Балаларға ыңғайлы ірі батырмалар, қарапайым маршруттар және ата-ана үшін бақылау аймағы қарастырылады.
+            </p>
+            <div class="idea-tags" id="support-ideas"></div>
+            <form class="message-form" id="support-form">
+              <label>
+                <span data-i18n="supportTopicLabel">Тақырып</span>
+                <input type="text" name="topic" required />
+              </label>
+              <label>
+                <span data-i18n="supportPlanLabel">Жоспар / идея / сұрақ</span>
+                <textarea name="plan" rows="5" required></textarea>
+              </label>
+              <button class="secondary-button" type="submit" data-i18n="supportSubmit">Жіберу</button>
+            </form>
+            <div class="results-box hidden" id="support-result"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal hidden" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <div class="modal__card">
+        <button class="modal__close" type="button" data-close="auth-modal">×</button>
+        <p class="eyebrow" data-i18n="authEyebrow">Қош келдің</p>
+        <h2 id="auth-title" data-i18n="authTitle">Тіркелу немесе кіру</h2>
+        <div class="auth-layout">
+          <form id="auth-form" class="auth-form">
+            <label>
+              <span data-i18n="nameLabel">Аты</span>
+              <input type="text" name="name" value="Aruzhan" required />
+            </label>
+            <label>
+              <span data-i18n="emailLabel">Email</span>
+              <input type="email" name="email" value="kid@example.com" required />
+            </label>
+            <label>
+              <span data-i18n="passwordLabel">Құпиясөз</span>
+              <input type="password" name="password" value="12345678" required />
+            </label>
+            <label>
+              <span data-i18n="levelSelectLabel">Деңгей</span>
+              <select name="level" id="auth-level">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+              </select>
+            </label>
+            <button class="primary-button primary-button--full" type="submit" data-i18n="saveProfile">
+              Профильді сақтау
+            </button>
+          </form>
+
+          <div class="character-picker">
+            <strong data-i18n="characterPickTitle">Ертегі кейіпкерін таңда</strong>
+            <div class="character-options" id="character-options"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="task-modal" role="dialog" aria-modal="true" aria-labelledby="task-title">
+      <div class="modal__card modal__card--wide">
+        <button class="modal__close" type="button" data-close="task-modal">×</button>
+        <p class="eyebrow" data-i18n="taskEyebrow">Видео аяқталды</p>
+        <h2 id="task-title" data-i18n="taskTitle">AI тапсырмалары дайын</h2>
+        <p id="task-description"></p>
+        <form id="task-form" class="task-list"></form>
+        <div class="modal-actions">
+          <button class="secondary-button" type="button" id="regen-tasks" data-i18n="regenTasks">
+            Қайта генерациялау
+          </button>
+          <button class="primary-button" type="button" id="submit-tasks" data-i18n="submitTasks">
+            Жауаптарды тексеру
+          </button>
+        </div>
+        <div class="results-box hidden" id="task-results"></div>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="placement-modal" role="dialog" aria-modal="true" aria-labelledby="placement-title">
+      <div class="modal__card">
+        <button class="modal__close" type="button" data-close="placement-modal">×</button>
+        <p class="eyebrow" data-i18n="placementEyebrow">Placement test</p>
+        <h2 id="placement-title" data-i18n="placementModalTitle">Қысқа тест</h2>
+        <form id="placement-form" class="task-list"></form>
+        <button class="primary-button primary-button--full" type="button" id="submit-placement" data-i18n="submitPlacement">
+          Деңгейді көру
+        </button>
+        <div class="results-box hidden" id="placement-result"></div>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="storybook-modal" role="dialog" aria-modal="true" aria-labelledby="storybook-title">
+      <div class="modal__card modal__card--wide storybook-modal__card">
+        <button class="modal__close" type="button" data-close="storybook-modal">×</button>
+        <p class="eyebrow">Storybook</p>
+        <h2 id="storybook-title">balapan.ai photo book</h2>
+        <div class="storybook-viewer">
+          <button class="storybook-nav" type="button" id="storybook-prev" aria-label="Previous page">←</button>
+          <figure class="storybook-stage">
+            <img
+              src="img-site /1.jpg"
+              alt="Storybook page"
+              id="storybook-image"
+            />
+          </figure>
+          <button class="storybook-nav" type="button" id="storybook-next" aria-label="Next page">→</button>
+        </div>
+        <div class="storybook-footer">
+          <strong id="storybook-counter">1 / 5</strong>
+          <div class="storybook-thumbs" id="storybook-thumbs">
+            <button class="storybook-thumb is-active" type="button" data-story-index="0">
+              <img src="img-site /1.jpg" alt="Thumbnail 1" />
+            </button>
+            <button class="storybook-thumb" type="button" data-story-index="1">
+              <img src="img-site /2.jpg" alt="Thumbnail 2" />
+            </button>
+            <button class="storybook-thumb" type="button" data-story-index="2">
+              <img src="img-site /3.jpg" alt="Thumbnail 3" />
+            </button>
+            <button class="storybook-thumb" type="button" data-story-index="3">
+              <img src="img-site /4.jpg" alt="Thumbnail 4" />
+            </button>
+            <button class="storybook-thumb" type="button" data-story-index="4">
+              <img src="img-site /5.jpg" alt="Thumbnail 5" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+
+    <script>
+      const image = document.querySelector(".story-book-cover__image");
+      
+      let lastY = 0;
+      let currentY = 0;
+      
+      window.addEventListener("scroll", () => {
+        lastY = window.scrollY;
+      });
+      
+      function animate() {
+        const target = lastY * 0.6;
+        currentY += (target - currentY) * 0.08;
+      
+        if (image) {
+          image.style.setProperty("--parallax-y", currentY + "px");
+        }
+      
+        requestAnimationFrame(animate);
+      }
+      
+      animate();
+      </script>
+      </body>
+  </body>
+</html>
